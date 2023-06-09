@@ -33,7 +33,7 @@ class RegGatherInfo(models.Model):
     description = models.TextField(verbose_name="Description", null=True)
     reset = models.CharField(verbose_name="Reset", max_length=64, null=True)
     address = models.CharField(verbose_name="Address", max_length=64, null=True)
-    retention = models.CharField(verbose_name="Retention", max_length=64, null=True)
+    retention = models.CharField(verbose_name="Retention", max_length=64, null=True, blank=True)
     reg_ram = models.CharField(verbose_name="reg/ram", max_length=64, null=True)
 
     class Meta:
@@ -54,7 +54,7 @@ class SingleRegInfo(models.Model):
     field = models.CharField(verbose_name="Field", max_length=128)
     note = models.CharField(verbose_name="Note", max_length=128, null=True, blank=True)
     description = models.TextField(verbose_name="Description", null=True)
-    hw_RW = models.CharField(verbose_name="HW R/W",max_length=16,null=True)
+    hw_RW = models.CharField(verbose_name="HW R/W", max_length=16, null=True)
 
 
 class ValueInfo(models.Model):
@@ -63,7 +63,7 @@ class ValueInfo(models.Model):
     single_reg_uuid = models.ForeignKey(SingleRegInfo, to_field='single_reg_uuid', on_delete=models.CASCADE,
                                         db_column="single_reg_uuid")
     value_uuid = models.CharField(verbose_name="value_uuid", max_length=128, null=False, unique=True)
-    valueId = models.CharField(verbose_name="ValueId", max_length=64,null=True)
+    valueId = models.CharField(verbose_name="ValueId", max_length=64, null=True)
     value = models.IntegerField(verbose_name="Value")
     description = models.TextField(verbose_name="Description", null=True)
 

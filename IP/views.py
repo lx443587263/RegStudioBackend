@@ -436,6 +436,7 @@ def reloadData(file_name, file_ip_uuid):
                 gather_obj = {}
                 single_reg_obj = {}
                 for column in data.columns:
+                    print(column,row[column])
                     if row['Reg Name']:
                         gather_obj["ip_uuid"] = file_ip_uuid
                         reg_gather_uuid = str(uuid.uuid4())
