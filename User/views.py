@@ -10,7 +10,6 @@ from User.models import UserInfo, UserManager
 from rest_framework.permissions import BasePermission
 from rest_framework.authentication import BaseAuthentication
 from rest_framework import exceptions
-# from utils.viewsets import ModelViewSet
 from rest_framework.viewsets import ModelViewSet
 from django.contrib.auth import authenticate, login
 from django.views.decorators.csrf import csrf_exempt
@@ -61,13 +60,21 @@ class UserInfoView(ModelViewSet, ContextMixin):
 
     @action(methods=['delete'], detail=False)
     def delete(self, request):
-        print(request.GET.get('user_uuid'))
+        # print(request.GET.get('user_uuid'))
         queryset = UserInfo.objects.filter(user_uuid=request.GET.get('user_uuid')).delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
     @action(methods=['put'], detail=False)
     def put(self, request):
         queryset = UserInfo.objects.get(user_uuid=request.GET.get('user_uuid'))
+
+        if request.path == "/api/user/changePasswd/":
+            new_password = request.data['new_password']
+            queryset.set_password(new_password)
+            queryset.save()
+            # 返回密码修改成功的信息
+            return Response('密码修改成功！')
+
         serializer = UserInfoSerializers(data=request.data, instance=queryset)
         if serializer.is_valid():
             serializer.save()
@@ -98,7 +105,7 @@ class UserInfoView(ModelViewSet, ContextMixin):
             if user is not None:
                 # 如果验证通过，生成一个 Token 并返回给前端
                 token = generate_token(user)
-                return JsonResponse({'token': token, 'position': user.position, 'username': user.username})
+                return JsonResponse({'token': token, 'position': user.position, 'username': user.username, 'user_uuid': user.user_uuid})
             else:
                 # 如果验证失败，返回错误信息
                 # return Response('Invalid credentials')
