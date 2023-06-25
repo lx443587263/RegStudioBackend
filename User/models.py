@@ -33,14 +33,7 @@ class UserInfo(AbstractBaseUser, PermissionsMixin):
     password = models.CharField(verbose_name="Password", max_length=128)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
-    position_choices = (
-        ("admin", "管理员"),
-        ("DigitalFront", "数字前端工程师"),
-        ("DigitalEnd", "数字后端工程师"),
-        ("DigitalVerification", "数字验证工程师"),
-        ("Embedded", "嵌入式工程师"),
-    )
-    position = models.CharField(verbose_name="position", max_length=64, choices=position_choices)
+    position = models.CharField(verbose_name="position", max_length=64)
     create_date = models.DateField(verbose_name="CreateDate")
 
     objects = UserManager()

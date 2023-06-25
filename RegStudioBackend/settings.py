@@ -84,7 +84,7 @@ LOGGING = {
         'file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': './RegStudioBackend/log/logs.log', # 日志文件路径
+            'filename': './RegStudioBackend/log/logs.log',  # 日志文件路径
         },
     },
     'loggers': {
@@ -125,7 +125,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -171,7 +170,12 @@ PERMISSIONS = {
     "Embedded": {},
 }
 
-
+CROWD_OPTIONS = {
+    "application_name": "test",
+    "application_password": "qwe456qwe456",
+    "crowd_serve_ip": "http://172.16.38.11:8095",
+    "local_ip": "172.16.38.1"
+}
 
 AUTH_USER_MODEL = 'User.UserInfo'
 # LOGIN_REDIRECT_URL = 'ip/ipinfo'

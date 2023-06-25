@@ -332,7 +332,7 @@ def reloadData(file_name, file_ip_uuid):
         # 遍历文档中的所有表格
         for table in document.tables:
             # 打印表格索引
-            print(f'Table {table_index}:')
+            # print(f'Table {table_index}:')
 
             # 遍历表格中的所有行
             gather_obj = {}
@@ -398,7 +398,7 @@ def reloadData(file_name, file_ip_uuid):
                             else:
                                 gather_obj["single_reg_list"].append(single_reg_obj)
                             single_reg_obj = {}
-                print(f'  Row {row_index}: {new_list}')
+                # print(f'  Row {row_index}: {new_list}')
             if gather_obj:
                 RegGatherInfo.objects.create(ip_uuid=IpInfo.objects.get(ip_uuid=file_ip_uuid),
                                              reg_gather_uuid=gather_obj['reg_gather_uuid'],
@@ -436,7 +436,7 @@ def reloadData(file_name, file_ip_uuid):
                 gather_obj = {}
                 single_reg_obj = {}
                 for column in data.columns:
-                    print(column,row[column])
+                    # print(column,row[column])
                     if row['Reg Name']:
                         gather_obj["ip_uuid"] = file_ip_uuid
                         reg_gather_uuid = str(uuid.uuid4())
@@ -454,7 +454,7 @@ def reloadData(file_name, file_ip_uuid):
                                 single_reg_obj["end_bit"] = row[column]
                         single_reg_obj[column] = row[column]
                 if gather_obj:
-                    print(gather_obj)
+                    # print(gather_obj)
                     RegGatherInfo.objects.create(ip_uuid=IpInfo.objects.get(ip_uuid=file_ip_uuid),
                                                  reg_gather_uuid=gather_obj['reg_gather_uuid'],
                                                  offset=gather_obj['Offset Addr'],
@@ -465,7 +465,7 @@ def reloadData(file_name, file_ip_uuid):
                                                  retention=gather_obj['Retention'],
                                                  )
                 if single_reg_obj:
-                    print(single_reg_obj)
+                    # print(single_reg_obj)
                     SingleRegInfo.objects.create(
                         single_reg_uuid=single_reg_obj['single_reg_uuid'],
                         reg_gather_uuid=RegGatherInfo.objects.get(reg_gather_uuid=single_reg_obj['reg_gather_uuid']),
@@ -491,7 +491,7 @@ class TemplateFileViewSet(ModelViewSet):
     def delete(self, request):
         queryset = TemplateFilesModel.objects.filter(file_uuid=request.GET.get('file_uuid'))
         # queryset = TemplateFilesModel.objects.filter(id=request.GET.get('id')).delete()
-        print(queryset.values('file')[0]['file'])
+        # print(queryset.values('file')[0]['file'])
         if delete_file(queryset.values('file')[0]['file']):
             queryset.delete()
             return Response({'message': '文件删除成功'})

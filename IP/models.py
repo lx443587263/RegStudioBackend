@@ -30,7 +30,7 @@ class RegGatherInfo(models.Model):
     tag = models.CharField(verbose_name="Tag", max_length=64)
     offset = models.CharField(verbose_name="Offset", max_length=64)
     reg_gather_name = models.CharField(verbose_name="RegGatherName", max_length=128)
-    description = models.TextField(verbose_name="Description", null=True)
+    description = models.TextField(verbose_name="Description", null=True, blank=True)
     reset = models.CharField(verbose_name="Reset", max_length=64, null=True)
     address = models.CharField(verbose_name="Address", max_length=64, null=True)
     retention = models.CharField(verbose_name="Retention", max_length=64, null=True, blank=True)

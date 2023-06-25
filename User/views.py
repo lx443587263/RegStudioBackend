@@ -1,9 +1,11 @@
 import sre_constants
-
 from django.shortcuts import render
 from django.contrib.auth import authenticate
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
+from django.conf import settings
+import requests
+import uuid
 from rest_framework.response import Response
 from rest_framework.filters import SearchFilter, OrderingFilter
 from User.models import UserInfo, UserManager
@@ -20,9 +22,23 @@ import jwt
 from django.conf import settings
 from rest_framework.decorators import action
 from rest_framework import status
+from datetime import datetime
 from django.contrib.auth.hashers import make_password
 from django.views.generic.base import ContextMixin
 from rest_framework.renderers import JSONRenderer
+
+import base64
+
+
+def get_basic_auth_str(username, password):
+    temp_str = username + ':' + password
+    # 转成bytes string
+    bytesString = temp_str.encode(encoding="utf-8")
+    # base64 编码
+    encodestr = base64.b64encode(bytesString)
+    # 解码
+    decodestr = base64.b64decode(encodestr)
+    return 'Basic ' + encodestr.decode()
 
 
 def generate_token(user):
@@ -86,7 +102,6 @@ class UserInfoView(ModelViewSet, ContextMixin):
     def create(self, request):
         if request.method == 'POST':
             if request.path == "/api/user/add/":
-                print(request.data)
                 UserManager.create_user(self, username=request.data.get('username'),
                                         password=request.data.get('password'),
                                         user_uuid=request.data.get('user_uuid'),
@@ -100,16 +115,73 @@ class UserInfoView(ModelViewSet, ContextMixin):
 
             # queryset = UserInfo.objects.get(username=username)
             # 调用 Django 自带的 authenticate() 方法进行身份验证
-            user = authenticate(request, username=username, password=password, model=UserInfo)
+            if username == "admin":
+                user = authenticate(request, username=username, password=password, model=UserInfo)
 
-            if user is not None:
-                # 如果验证通过，生成一个 Token 并返回给前端
-                token = generate_token(user)
-                return JsonResponse({'token': token, 'position': user.position, 'username': user.username, 'user_uuid': user.user_uuid})
+                if user is not None:
+                    # 如果验证通过，生成一个 Token 并返回给前端
+                    token = generate_token(user)
+                    return JsonResponse({'token': token, 'position': user.position, 'username': user.username,
+                                         'user_uuid': user.user_uuid})
+                else:
+                    # 如果验证失败，返回错误信息
+                    # return Response('Invalid credentials')
+                    return JsonResponse({'error': 'Invalid credentials'}, status=400)
             else:
-                # 如果验证失败，返回错误信息
-                # return Response('Invalid credentials')
-                return JsonResponse({'error': 'Invalid credentials'}, status=400)
+
+                # 设置Crowd服务器的URL和应用程序信息
+                url = settings.CROWD_OPTIONS['crowd_serve_ip'] + '/crowd/rest/usermanagement/1/session'
+                # 设置HTTP头信息，包括应用程序信息和返回的数据类型
+                headers = {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Authorization': get_basic_auth_str(settings.CROWD_OPTIONS['application_name'],
+                                                        settings.CROWD_OPTIONS['application_password'])
+                }
+                data = {
+                    "username": request.data.get('username'),
+                    "password": request.data.get('password'),
+                    "validation-factors": {
+                        "validationFactors": [
+                            {
+                                "name": "remote_address",
+                                "value": settings.CROWD_OPTIONS['local_ip']
+                            }
+                        ]
+                    }
+                }
+
+                # 发出HTTP GET请求，获取所有用户信息
+                # response = requests.get(url, headers=headers)
+                response = requests.post(url, json=data, headers=headers)
+                # 解析返回的JSON数据
+                crowd_response = response.json()
+                queryset = UserInfo.objects.filter(username=request.data.get('username'))
+                if crowd_response['token']:
+                    user = authenticate(request, username=username, password=password, model=UserInfo)
+                    if user is not None:
+                        return JsonResponse(
+                            {'token': crowd_response['token'], 'position': user.position, 'username': user.username,
+                             'user_uuid': user.user_uuid})
+                    elif queryset.count() != 0:
+                        queryset[0].set_password(request.data.get('password'))
+                        queryset[0].save()
+                        return JsonResponse(
+                            {'token': crowd_response['token'], 'position': queryset[0].position, 'username': crowd_response['user']['name'],
+                             'user_uuid': queryset[0].user_uuid})
+                    else:
+                        UserManager.create_user(self, username=request.data.get('username'),
+                                                password=request.data.get('password'),
+                                                user_uuid=str(uuid.uuid4()),
+                                                create_date=datetime.now().strftime('%Y-%m-%d'),
+                                                position='read').save()
+                        return JsonResponse({'token': crowd_response['token'], 'position': 'read',
+                                             'username': crowd_response['user']['name'],
+                                             'user_uuid': request.data.get('user_uuid')})
+                else:
+                    # 如果验证失败，返回错误信息
+                    # return Response('Invalid credentials')
+                    return JsonResponse({'error': 'Invalid credentials'}, status=400)
 
 
 class MineAuthentication(BaseAuthentication):
@@ -127,13 +199,11 @@ class MineAuthentication(BaseAuthentication):
 
 class MinPermission(BasePermission):
     def has_permission(self, request, view):
-        print("判断权限", request.user.role)
         # 1.当前用户所有的权限
         from django.conf import settings
         permission_dict = settings.PERMISSIONS[request.user.role]
 
         # 2.当前用户正在访问的url和方式
-        print(request.resolver_match.url_name, request.method)
         url_name = request.resolver_match.url_name
         method = request.method
         # 3.权限判断
