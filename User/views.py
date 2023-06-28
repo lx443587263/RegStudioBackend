@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.conf import settings
+import os
 import requests
 import uuid
 from rest_framework.response import Response
@@ -25,6 +26,7 @@ from rest_framework import status
 from datetime import datetime
 from django.contrib.auth.hashers import make_password
 from django.views.generic.base import ContextMixin
+from django.http import FileResponse
 from rest_framework.renderers import JSONRenderer
 
 import base64
@@ -216,3 +218,16 @@ class MinPermission(BasePermission):
 
     def has_object_permission(self, request, view, obj):
         return True
+
+
+def download_help_docx(*args, **kwargs):
+    # 检查文件是否存在
+    if not os.path.exists("doc/RegStudio使用文档.docx"):
+        # 如果文件不存在，返回适当的错误响应
+        return Response(status=404)
+
+    # 通过FileResponse发送文件响应
+    response = FileResponse(open("doc/RegStudio使用文档.docx", 'rb'),
+                            content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+    response['Content-Disposition'] = 'attachment; filename="your-docx-file.docx"'
+    return response
