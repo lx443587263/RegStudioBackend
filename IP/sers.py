@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from IP.models import IpInfo, RegGatherInfo, SingleRegInfo, ValueInfo, FilesModel, TemplateFilesModel, OpLogs, \
-    AccessTimeOutLogs, CategoryInfo, modificationInfo
+    AccessTimeOutLogs, CategoryInfo, modificationInfo, IpPageFilesModel
 
 
 # IP序列化器
@@ -70,4 +70,10 @@ class AccessTimeOutLogsSerializer(serializers.ModelSerializer):
 class modificationSerializer(serializers.ModelSerializer):
     class Meta:
         model = modificationInfo
+        fields = '__all__'
+
+
+class IpPageFilesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = IpPageFilesModel
         fields = '__all__'

@@ -135,3 +135,19 @@ class modificationInfo(models.Model):
 
     class Meta:
         db_table = 'modificationInfo'
+
+
+class IpPageFilesModel(models.Model):
+    file = models.FileField(upload_to='IpPage/')
+    name = models.CharField(verbose_name="FileName", max_length=128)
+    version = models.CharField(verbose_name="Version", max_length=128)
+    commit_content = models.CharField(verbose_name="Commit Content", max_length=256)
+    create_user = models.CharField(verbose_name="Create User", max_length=128)
+    upload_data = models.CharField(verbose_name="Upload_data",max_length=128)
+    file_uuid = models.CharField(verbose_name="file_uuid", max_length=128, null=False, unique=True)
+    ip_uuid = models.ForeignKey(IpInfo, on_delete=models.CASCADE, to_field='ip_uuid', db_column="ip_uuid",
+                                max_length=128, null=False)
+
+    class Meta:
+        db_table = 'ip_page_files_storage'
+        ordering = ['-id']

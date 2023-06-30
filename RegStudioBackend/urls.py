@@ -32,6 +32,7 @@ router.register('api/user/list', UserViews.UserInfoView)
 router.register('api/user/changePasswd', UserViews.UserInfoView)
 router.register('api/ip/upload_file', IpViews.FileViewSet)
 router.register('api/ip/upload_template', IpViews.TemplateFileViewSet)
+router.register('api/ip/ip_page_file', IpViews.IpPageFilesViewSet)
 router.register('api/ip/category', IpViews.CategoryView)
 router.register('api/ip/modification', IpViews.modificationInfoView)
 
@@ -41,7 +42,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/ip/download_spec/', IpViews.download_docx, name='download_spec'),
     path('api/ip/download_help/', UserViews.download_help_docx, name='download_help_spec'),
-
+    path('api/ip/download_ip_page_file/', IpViews.download_docx, name='download_spec')
 
     # path('user/login', UserViews.login_view)
     # # 获取Token的接口

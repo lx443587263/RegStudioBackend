@@ -1,8 +1,8 @@
 from rest_framework.viewsets import ModelViewSet
 from IP.models import IpInfo, RegGatherInfo, SingleRegInfo, ValueInfo, FilesModel, TemplateFilesModel, CategoryInfo, \
-    modificationInfo
+    modificationInfo, IpPageFilesModel
 from IP.sers import IpSerializers, RegGatherSerializers, SingleRegSerializers, ValueSerializers, FilesSerializer, \
-    TemplateFilesSerializer, CategorySerializers, modificationSerializer
+    TemplateFilesSerializer, CategorySerializers, modificationSerializer, IpPageFilesSerializer
 from rest_framework.filters import SearchFilter, OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.decorators import action, api_view
@@ -111,9 +111,9 @@ class RegGatherView(ModelViewSet):
                 or queryset.tag != request.data["tag"] \
                 or queryset.offset != request.data["offset"] \
                 or queryset.description != request.data["description"] \
-                or queryset.reset != request.data["reset"]\
-                or queryset.address != request.data["address"]\
-                or queryset.reg_ram != request.data["reg_ram"]\
+                or queryset.reset != request.data["reset"] \
+                or queryset.address != request.data["address"] \
+                or queryset.reg_ram != request.data["reg_ram"] \
                 or queryset.retention != request.data["retention"]:
 
             temp_former_content = json.dumps(
@@ -167,7 +167,7 @@ class SingleRegView(ModelViewSet):
                 or queryset.field != request.data["field"] \
                 or queryset.note != request.data["note"] \
                 or queryset.description != request.data["description"] \
-                or queryset.reset_value != request.data["reset_value"]\
+                or queryset.reset_value != request.data["reset_value"] \
                 or queryset.hw_RW != request.data["hw_RW"]:
             temp_former_content = json.dumps(
                 {'single_reg_uuid': queryset.single_reg_uuid,
@@ -509,7 +509,10 @@ def delete_file(file_path):
 
 
 def download_docx(request, *args, **kwargs):
-    queryset = TemplateFilesModel.objects.filter(file_uuid=request.GET.get('file_uuid'))
+    if request.path == "/api/ip/download_spec/":
+        queryset = TemplateFilesModel.objects.filter(file_uuid=request.GET.get('file_uuid'))
+    else:
+        queryset = IpPageFilesModel.objects.filter(file_uuid=request.GET.get('file_uuid'))
     filename = queryset.values('file')[0]['file']
     # 检查文件是否存在
     if not os.path.exists(filename):
@@ -517,6 +520,7 @@ def download_docx(request, *args, **kwargs):
         return Response(status=404)
 
     # 通过FileResponse发送文件响应
+
     response = FileResponse(open(filename, 'rb'),
                             content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
     response['Content-Disposition'] = 'attachment; filename="your-docx-file.docx"'
@@ -528,3 +532,37 @@ class modificationInfoView(ModelViewSet):
     queryset = modificationInfo.objects.all()
     serializer_class = modificationSerializer
     filter_backends = (SearchFilter, OrderingFilter, DjangoFilterBackend)
+
+
+class IpPageFilesViewSet(ModelViewSet):
+    """导入spec头文件视图"""
+    queryset = IpPageFilesModel.objects.all()
+    serializer_class = IpPageFilesSerializer
+    filter_backends = (SearchFilter, OrderingFilter, DjangoFilterBackend)  # 指定过滤器
+    search_fields = ('name', 'version', 'create_user', 'upload_data', 'file_uuid', 'ip_uuid')
+    # 指定可搜索的字段
+    filterset_fields = ('name', 'version', 'create_user', 'upload_data', 'file_uuid', 'ip_uuid')
+
+    @action(methods=['delete'], detail=False)
+    def delete(self, request):
+        queryset = IpPageFilesModel.objects.filter(file_uuid=request.GET.get('file_uuid'))
+        # queryset = TemplateFilesModel.objects.filter(id=request.GET.get('id')).delete()
+        # print(queryset.values('file')[0]['file'])
+        if delete_file(queryset.values('file')[0]['file']):
+            queryset.delete()
+            return Response({'message': '文件删除成功'})
+        else:
+            return Response({'message': '文件删除失败'})
+
+    def create(self, request, *args, **kwargs):
+        ip_page_file = request.FILES.get('file')
+        if ip_page_file is not None:
+            serializer = IpPageFilesSerializer(data=request.data)
+            # 检查数据是否存在
+            if serializer.is_valid():
+                serializer.save()
+            # 在这里处理上传的文件，例如保存到服务器或对文件进行其他操作
+            return Response({'message': '文件上传成功'})
+
+        else:
+            return Response({'message': 'No file uploaded'}, status=400)
