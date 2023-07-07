@@ -286,6 +286,23 @@ class CategoryView(ModelViewSet):
         queryset = CategoryInfo.objects.filter(category=request.GET.get('category')).delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+    @action(methods=['put'], detail=False)
+    def put(self, request):
+        queryset = CategoryInfo.objects.get(id=request.data['id'])
+        serializer = CategorySerializers(data=request.data, instance=queryset)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
+
+    def create(self, request, *args, **kwargs):
+        data = request.data
+        exists = CategoryInfo.objects.filter(category=data.get('category')).exists()
+        if exists:
+            return Response({'error': '种类已存在'})
+        return super().create(request, *args, **kwargs)
+
 
 class FileViewSet(ModelViewSet):
     """导入spec文件视图"""
