@@ -383,7 +383,10 @@ def reloadData(file_name, file_ip_uuid):
                         gather_obj["ip_uuid"] = file_ip_uuid
                         gather_obj["reg_gather_uuid"] = str(uuid.uuid4())
                         gather_obj["reg_gather_name"] = new_list[0]
-                        gather_obj["offset"] = new_list[2]
+                        if "h" in new_list[2]:
+                            gather_obj["offset"] = new_list[2].replace("h", "")
+                        else:
+                            gather_obj["offset"] = new_list[2]
                         gather_obj["single_reg_list"] = []
                     elif row_index == 1:
                         gather_obj["reset"] = new_list[0]
