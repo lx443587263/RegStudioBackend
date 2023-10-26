@@ -64,7 +64,7 @@ class ValueInfo(models.Model):
                                         db_column="single_reg_uuid")
     value_uuid = models.CharField(verbose_name="value_uuid", max_length=128, null=False, unique=True)
     valueId = models.CharField(verbose_name="ValueId", max_length=64, null=True)
-    value = models.IntegerField(verbose_name="Value")
+    value = models.CharField(verbose_name="Value", max_length=64)
     description = models.TextField(verbose_name="Description", null=True)
 
 

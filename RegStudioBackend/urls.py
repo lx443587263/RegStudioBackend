@@ -18,6 +18,7 @@ from django.urls import path, re_path
 
 from IP import views as IpViews
 from User import views as UserViews
+from PatternInfo import views as PatternInfoViews
 from rest_framework import routers
 
 # 注册路由
@@ -35,7 +36,7 @@ router.register('api/ip/upload_template', IpViews.TemplateFileViewSet)
 router.register('api/ip/ip_page_file', IpViews.IpPageFilesViewSet)
 router.register('api/ip/category', IpViews.CategoryView)
 router.register('api/ip/modification', IpViews.modificationInfoView)
-
+router.register('api/patterninfo',PatternInfoViews.PatternInfoView)
 # router.register('api/ip/download_spec', IpViews.download_docx)
 
 urlpatterns = [

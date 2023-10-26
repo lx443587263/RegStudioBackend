@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_filters',
     'IP.apps.IpConfig',
     'User.apps.UserConfig',
+    'PatternInfo.apps.PatterninfoConfig'
 ]
 
 MIDDLEWARE = [
