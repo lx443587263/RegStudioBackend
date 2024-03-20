@@ -1,20 +1,23 @@
 from rest_framework.viewsets import ModelViewSet
 from IP.models import IpInfo, RegGatherInfo, SingleRegInfo, ValueInfo, FilesModel, TemplateFilesModel, CategoryInfo, \
-    modificationInfo, IpPageFilesModel
+    modificationInfo, IpPageFilesModel, ProjectInfo,ProjectChange
 from IP.sers import IpSerializers, RegGatherSerializers, SingleRegSerializers, ValueSerializers, FilesSerializer, \
-    TemplateFilesSerializer, CategorySerializers, modificationSerializer, IpPageFilesSerializer
+    TemplateFilesSerializer, CategorySerializers, modificationSerializer, IpPageFilesSerializer, ProjectSerializers,ProjectChangeSerializers
 from rest_framework.filters import SearchFilter, OrderingFilter
+from IP.filters import IpInfoFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.decorators import action, api_view
 from rest_framework.response import Response
 from rest_framework import status
 from User.models import UserInfo
+from django.db.models import Q
 import docx
 import uuid
 import os, json
-from django.http import FileResponse
+from django.http import FileResponse, JsonResponse
 from django.utils import timezone
 import pandas as pd
+from django.core.paginator import Paginator, EmptyPage
 
 
 # Create your views here.
@@ -24,8 +27,10 @@ class IpView(ModelViewSet):
     queryset = IpInfo.objects.all()
     serializer_class = IpSerializers
     filter_backends = (SearchFilter, OrderingFilter, DjangoFilterBackend)  # 指定过滤器
-    search_ = ('ip_uuid', 'category', 'version', 'child_version', 'ip_name', 'private_project')  # 指定可搜索的字段
-    filterset_fields = ('ip_uuid', 'category', 'version', 'child_version', 'ip_name', 'private_project')
+    # search_fields = ('ip_uuid', 'category', 'version', 'child_version', 'ip_name', 'private_project')  # 指定可搜索的字段
+    # filterset_fields = ('ip_uuid', 'category', 'version', 'child_version', 'ip_name', 'private_project')
+    filterset_class= IpInfoFilter
+
 
     @action(methods=['delete'], detail=False)
     def delete(self, request):
@@ -37,11 +42,19 @@ class IpView(ModelViewSet):
     def put(self, request):
         queryset = IpInfo.objects.get(ip_uuid=request.GET.get('ip_uuid'))
         serializer = IpSerializers(data=request.data, instance=queryset)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
+        '''校验'''
+        data = request.data
+        exists = IpInfo.objects.filter(version=data.get('version'), child_version=data.get('child_version'),
+                                       ip_name=data.get('ip_name'), category=data.get('category'),
+                                       project=data.get('project')).exists()
+        if exists:
+            return Response({'error': '子版本已存在'})
         else:
-            return Response(serializer.errors)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data)
+            else:
+                return Response(serializer.errors)
         # data = request.data
         # if 'private_project' in data:
         #     # 在数据库中查询是否存在相同的记录
@@ -81,7 +94,7 @@ class IpView(ModelViewSet):
                     return Response({'error': '版本已存在'})
             else:
                 exists = IpInfo.objects.filter(version=data.get('version'), child_version=data.get('child_version'),
-                                               ip_name=data.get('ip_name'), category=data.get('category')).exists()
+                                               ip_name=data.get('ip_name'), category=data.get('category'),project=data.get('project')).exists()
                 if exists:
                     return Response({'error': '子版本已存在'})
 
@@ -303,6 +316,49 @@ class CategoryView(ModelViewSet):
             return Response({'error': '种类已存在'})
         return super().create(request, *args, **kwargs)
 
+class ProjectView(ModelViewSet):
+    """项目视图"""
+    queryset = ProjectInfo.objects.all()
+    serializer_class = ProjectSerializers
+    filter_backends = (SearchFilter, OrderingFilter, DjangoFilterBackend)  # 指定过滤器
+    search_fields = ('project', 'project_uuid')  # 指定可搜索的字段
+    filterset_fields = ('project', 'project_uuid')
+
+
+    @action(methods=['delete'], detail=False)
+    def delete(self, request):
+        queryset = ProjectInfo.objects.filter(project_uuid=request.GET.get('project_uuid')).delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+    @action(methods=['put'], detail=False)
+    def put(self, request):
+        queryset = ProjectInfo.objects.get(id=request.data['id'])
+        print(request.data)
+        serializer = ProjectSerializers(data=request.data, instance=queryset)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
+
+    def create(self, request, *args, **kwargs):
+        data = request.data
+        condition1 = Q(project=data.get('project'))
+        condition2 = Q(version=data.get('version'))
+        result = ProjectInfo.objects.filter(condition1&condition2)
+        print(result)
+        if result:
+            return Response({'error': '项目已存在'})
+        return super().create(request, *args, **kwargs)
+
+
+class ProjectChangeView(ModelViewSet):
+    """项目变更记录视图"""
+    queryset = ProjectChange.objects.all()
+    serializer_class = ProjectChangeSerializers
+    filter_backends = (SearchFilter, OrderingFilter, DjangoFilterBackend)  # 指定过滤器
+    search_fields = ('source_project', 'des_project')  # 指定可搜索的字段
+    filterset_fields = ('source_project', 'des_project')
 
 class FileViewSet(ModelViewSet):
     """导入spec文件视图"""
@@ -553,6 +609,33 @@ class modificationInfoView(ModelViewSet):
     serializer_class = modificationSerializer
     filter_backends = (SearchFilter, OrderingFilter, DjangoFilterBackend)
 
+
+
+def cut_page(request):
+    search = request.GET.get("search")
+    page = request.GET.get('page',default = 1)
+    serializer_class = modificationSerializer
+
+    vars = modificationInfo.objects.all().order_by("id")
+
+    if search:
+        vars = modificationInfo.objects.all().filter(key__contains=search)
+
+    paginator = Paginator(vars,20)
+
+    try:
+        vars = paginator.page(page).object_list
+    except EmptyPage:
+        vars = paginator.page(paginator.num_pages).object_list
+
+    vars = vars.values()
+
+    data = {
+        "success":True,
+        "results":list(vars),
+        "count":paginator.count
+    }
+    return JsonResponse(data)
 
 class IpPageFilesViewSet(ModelViewSet):
     """导入spec头文件视图"""

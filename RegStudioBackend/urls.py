@@ -35,15 +35,18 @@ router.register('api/ip/upload_file', IpViews.FileViewSet)
 router.register('api/ip/upload_template', IpViews.TemplateFileViewSet)
 router.register('api/ip/ip_page_file', IpViews.IpPageFilesViewSet)
 router.register('api/ip/category', IpViews.CategoryView)
+router.register('api/ip/project', IpViews.ProjectView)
 router.register('api/ip/modification', IpViews.modificationInfoView)
 router.register('api/patterninfo',PatternInfoViews.PatternInfoView)
+router.register('api/ip/projectchange',IpViews.ProjectChangeView)
 # router.register('api/ip/download_spec', IpViews.download_docx)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/ip/download_spec/', IpViews.download_docx, name='download_spec'),
     path('api/ip/download_help/', UserViews.download_help_docx, name='download_help_spec'),
-    path('api/ip/download_ip_page_file/', IpViews.download_docx, name='download_spec')
+    path('api/ip/download_ip_page_file/', IpViews.download_docx, name='download_spec'),
+    path('api/ip/modification/cut_page/', IpViews.cut_page)
 
     # path('user/login', UserViews.login_view)
     # # 获取Token的接口

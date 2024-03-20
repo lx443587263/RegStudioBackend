@@ -15,6 +15,7 @@ class IpInfo(models.Model):
     create_user = models.CharField(verbose_name="CreateUser", max_length=64, null=False)
     version = models.CharField(verbose_name="Version", max_length=64, null=False, default="v1.0")
     category = models.CharField(verbose_name="Category", max_length=128, null=False)
+    project = models.CharField(verbose_name="Project", max_length=1024, null=True)
     tags = models.CharField(verbose_name="Tags", max_length=256, null=True)
     child_version = models.CharField(verbose_name="Child Version", max_length=256, null=True)
     permission = models.CharField(verbose_name="Permission List", max_length=256, null=True)
@@ -90,7 +91,20 @@ class TemplateFilesModel(models.Model):
 class CategoryInfo(models.Model):
     category = models.CharField(verbose_name="Category", max_length=128, unique=True, null=False)
 
+class ProjectInfo(models.Model):
+    project_uuid = models.CharField(verbose_name="ProjectUuid", unique=True, max_length=128, null=False)
+    project = models.CharField(verbose_name="ProjectName", max_length=128, unique=False, null=True)
+    version = models.CharField(verbose_name="Version", max_length=128,null=False)
+    has_ip = models.CharField(verbose_name="HasIP",max_length=1024,null=True)
 
+class ProjectChange(models.Model):
+    operate_ip_name = models.CharField(verbose_name="OpIpName",max_length=128,null=True)
+    source_project = models.CharField(verbose_name="SourceProject", max_length=128,null=True)
+    source_project_uuid = models.CharField(verbose_name="SourceProjectUuid", max_length=128, null=True)
+    des_project = models.CharField(verbose_name="DesProject", max_length=128,null=True)
+    des_project_uuid = models.CharField(verbose_name="SourceProjectUuid", max_length=128,null=True)
+    edit_user = models.CharField(verbose_name="EditUser", max_length=128,null=False)
+    data = models.DateTimeField(verbose_name="StartDate", null=True)
 class OpLogs(models.Model):
     """操作日志表"""
     id = models.AutoField(primary_key=True)
@@ -109,7 +123,6 @@ class OpLogs(models.Model):
 
 class AccessTimeOutLogs(models.Model):
     """超时操作日志表"""
-
     id = models.AutoField(primary_key=True)
     re_time = models.CharField(max_length=32, verbose_name='请求时间')
     re_user = models.CharField(max_length=32, verbose_name='操作人')
