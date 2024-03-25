@@ -26611,3 +26611,1883 @@ Traceback (most recent call last):
     'url': request.get_host() + new_path,
 RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/ip/projectchange/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
 "POST /api/ip/projectchange HTTP/1.1" 500 16879
+Internal Server Error: /api/ip/ipinfo/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 47, in put
+    print(IpInfo.objects.get(category="Soc module"))
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/db/models/query.py", line 442, in get
+    num if not limit or num < limit else 'more than %s' % (limit - 1),
+IP.models.IpInfo.MultipleObjectsReturned: get() returned more than one IpInfo -- it returned 2!
+"PUT /api/ip/ipinfo/?ip_uuid=fc12397c-e74a-4eaf-a97c-73719dac69ac HTTP/1.1" 500 114857
+Internal Server Error: /api/ip/ipinfo/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 47, in put
+    print(IpInfo.objects.get(category="Soc module"))
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/db/models/query.py", line 442, in get
+    num if not limit or num < limit else 'more than %s' % (limit - 1),
+IP.models.IpInfo.MultipleObjectsReturned: get() returned more than one IpInfo -- it returned 2!
+"PUT /api/ip/ipinfo/?ip_uuid=fc12397c-e74a-4eaf-a97c-73719dac69ac HTTP/1.1" 500 114857
+Internal Server Error: /api/ip/ipinfo/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 47, in put
+    print(IpInfo.objects.get(category="Soc module"))
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/db/models/query.py", line 442, in get
+    num if not limit or num < limit else 'more than %s' % (limit - 1),
+IP.models.IpInfo.MultipleObjectsReturned: get() returned more than one IpInfo -- it returned 2!
+"PUT /api/ip/ipinfo/?ip_uuid=fc12397c-e74a-4eaf-a97c-73719dac69ac HTTP/1.1" 500 114857
+Internal Server Error: /api/ip/ipinfo/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 47, in put
+    print(IpInfo.objects.all().get(category="Soc module"))
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/db/models/query.py", line 442, in get
+    num if not limit or num < limit else 'more than %s' % (limit - 1),
+IP.models.IpInfo.MultipleObjectsReturned: get() returned more than one IpInfo -- it returned 2!
+"PUT /api/ip/ipinfo/?ip_uuid=fc12397c-e74a-4eaf-a97c-73719dac69ac HTTP/1.1" 500 110496
+Internal Server Error: /api/ip/ipinfo/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 47, in put
+    print(IpInfo.objects.all().get(category="Soc module"))
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/db/models/query.py", line 442, in get
+    num if not limit or num < limit else 'more than %s' % (limit - 1),
+IP.models.IpInfo.MultipleObjectsReturned: get() returned more than one IpInfo -- it returned 2!
+"PUT /api/ip/ipinfo/?ip_uuid=fc12397c-e74a-4eaf-a97c-73719dac69ac HTTP/1.1" 500 101807
+Internal Server Error: /api/ip/ipinfo/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 47, in put
+    print(IpInfo.objects.filter(ip_uuid=data.get('ip_uuid')).values()[0].ip_name)
+AttributeError: 'dict' object has no attribute 'ip_name'
+"PUT /api/ip/ipinfo/?ip_uuid=fc12397c-e74a-4eaf-a97c-73719dac69ac HTTP/1.1" 500 96926
+Internal Server Error: /api/ip/ipinfo/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 52, in put
+    IpInfo.save()
+TypeError: save() missing 1 required positional argument: 'self'
+"PUT /api/ip/ipinfo/?ip_uuid=fc12397c-e74a-4eaf-a97c-73719dac69ac HTTP/1.1" 500 97870
+Internal Server Error: /api/ip/ipinfo/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 52, in put
+    IpInfo.save()
+TypeError: save() missing 1 required positional argument: 'self'
+"PUT /api/ip/ipinfo/?ip_uuid=fc12397c-e74a-4eaf-a97c-73719dac69ac HTTP/1.1" 500 97870
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/mixins.py", line 40, in list
+    page = self.paginate_queryset(queryset)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/generics.py", line 171, in paginate_queryset
+    return self.paginator.paginate_queryset(queryset, self.request, view=self)
+AttributeError: 'Paginator' object has no attribute 'paginate_queryset'
+"GET /api/ip/modification/ HTTP/1.1" 500 97696
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/generics.py", line 66, in get_queryset
+    % self.__class__.__name__
+AssertionError: 'modificationInfoView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+"GET /api/ip/modification/ HTTP/1.1" 500 25759
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/generics.py", line 66, in get_queryset
+    % self.__class__.__name__
+AssertionError: 'modificationInfoView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+"GET /api/ip/modification/ HTTP/1.1" 500 25759
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/generics.py", line 66, in get_queryset
+    % self.__class__.__name__
+AssertionError: 'modificationInfoView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+"GET /api/ip/modification/ HTTP/1.1" 500 25759
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/generics.py", line 66, in get_queryset
+    % self.__class__.__name__
+AssertionError: 'modificationInfoView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+"GET /api/ip/modification/ HTTP/1.1" 500 25759
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+"GET /api/ip/modification/ HTTP/1.1" 500 25497
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+"GET /api/ip/modification/ HTTP/1.1" 500 25497
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+"GET /api/ip/modification/ HTTP/1.1" 500 25447
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+"GET /api/ip/modification/ HTTP/1.1" 500 25447
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+"GET /api/ip/modification/ HTTP/1.1" 500 25497
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+"GET /api/ip/modification/ HTTP/1.1" 500 25497
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 626, in list
+    return JsonResponse({'code': 0, 'msg': '数据正常', 'data': key_business_info})
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 603, in __init__
+    data = json.dumps(data, cls=encoder, **json_dumps_params)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/serializers/json.py", line 105, in default
+    return super().default(o)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'QuerySet' is not JSON serializable
+"GET /api/ip/modification/ HTTP/1.1" 500 26352
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 626, in list
+    return JsonResponse({'code': 0, 'msg': '数据正常', 'data': key_business_info})
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 603, in __init__
+    data = json.dumps(data, cls=encoder, **json_dumps_params)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/serializers/json.py", line 105, in default
+    return super().default(o)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'QuerySet' is not JSON serializable
+"GET /api/ip/modification/ HTTP/1.1" 500 26352
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 626, in list
+    return JsonResponse(key_business_info)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/ HTTP/1.1" 500 25680
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 626, in list
+    return JsonResponse(key_business_info)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/ HTTP/1.1" 500 25680
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 626, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/ HTTP/1.1" 500 25667
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 627, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/ HTTP/1.1" 500 108668
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 627, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/ HTTP/1.1" 500 108793
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 627, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/ HTTP/1.1" 500 100104
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 624, in list
+    print(request.GET("params"))
+TypeError: 'QueryDict' object is not callable
+"GET /api/ip/modification/ HTTP/1.1" 500 17148
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 624, in list
+    print(request.data.GET("ip_uuid"))
+AttributeError: 'dict' object has no attribute 'GET'
+"GET /api/ip/modification/ HTTP/1.1" 500 92931
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 624, in list
+    print(request.data.GET("ip_uuid"))
+AttributeError: 'dict' object has no attribute 'GET'
+"GET /api/ip/modification/ HTTP/1.1" 500 92931
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 628, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/ HTTP/1.1" 500 99892
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 628, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=xxxxx HTTP/1.1" 500 100346
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/request.py", line 416, in __getattr__
+    return getattr(self._request, attr)
+AttributeError: 'WSGIRequest' object has no attribute 'params'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 624, in list
+    print(request.params)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/request.py", line 418, in __getattr__
+    return self.__getattribute__(attr)
+AttributeError: 'Request' object has no attribute 'params'
+"GET /api/ip/modification/?ip_uuid=xxxxx HTTP/1.1" 500 101719
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/request.py", line 416, in __getattr__
+    return getattr(self._request, attr)
+AttributeError: 'WSGIRequest' object has no attribute 'params'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 624, in list
+    print(request.params)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/request.py", line 418, in __getattr__
+    return self.__getattribute__(attr)
+AttributeError: 'Request' object has no attribute 'params'
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 101848
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/request.py", line 416, in __getattr__
+    return getattr(self._request, attr)
+AttributeError: 'WSGIRequest' object has no attribute 'params'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 624, in list
+    print(request.params)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/request.py", line 418, in __getattr__
+    return self.__getattribute__(attr)
+AttributeError: 'Request' object has no attribute 'params'
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 101848
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/request.py", line 416, in __getattr__
+    return getattr(self._request, attr)
+AttributeError: 'WSGIRequest' object has no attribute 'params'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 624, in list
+    print(request.params)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/request.py", line 418, in __getattr__
+    return self.__getattribute__(attr)
+AttributeError: 'Request' object has no attribute 'params'
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 101848
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 628, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 100472
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 624, in list
+    print(request.GET("ip_uuid"))
+TypeError: 'QueryDict' object is not callable
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 93394
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 624, in list
+    print(request.GET("ip_uuid"))
+TypeError: 'QueryDict' object is not callable
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 93394
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 624, in list
+    print(request.GET("ip_uuid"))
+TypeError: 'QueryDict' object is not callable
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 102083
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 624, in list
+    print(request.GET("ip_uuid"))
+TypeError: 'QueryDict' object is not callable
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 102083
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 630, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 100709
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 629, in list
+    print(i['modify_content']['ip_uuid'])
+TypeError: string indices must be integers
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 96381
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 629, in list
+    print(i['modify_content'].ip_uuid)
+AttributeError: 'str' object has no attribute 'ip_uuid'
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 96563
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 630, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 100709
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 629, in list
+    print(i['modify_content'].ip_uuid)
+AttributeError: 'str' object has no attribute 'ip_uuid'
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 96563
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 629, in list
+    print((i['modify_content'])['ip_uuid'])
+TypeError: string indices must be integers
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 96385
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 629, in list
+    print((i['modify_content'])['ip_uuid'])
+TypeError: string indices must be integers
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 96385
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 630, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 100709
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 630, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 100715
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 629, in list
+    print(json.load(i['modify_content']))
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/json/__init__.py", line 296, in load
+    return loads(fp.read(),
+AttributeError: 'str' object has no attribute 'read'
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 102824
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 629, in list
+    print(json.load(i['modify_content']))
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/json/__init__.py", line 296, in load
+    return loads(fp.read(),
+AttributeError: 'str' object has no attribute 'read'
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 102824
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 629, in list
+    print(json.load(i['modify_content']))
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/json/__init__.py", line 296, in load
+    return loads(fp.read(),
+AttributeError: 'str' object has no attribute 'read'
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 102824
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 629, in list
+    print(json.load(i['modify_content']))
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/json/__init__.py", line 296, in load
+    return loads(fp.read(),
+AttributeError: 'str' object has no attribute 'read'
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 102824
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 629, in list
+    print(eval(i['modify_content']))
+  File "<string>", line 1, in <module>
+NameError: name 'null' is not defined
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 102695
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 630, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 100721
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 630, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 100742
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 632, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 100808
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 631, in list
+    print(json.loads(i['modify_content']))
+KeyError: 'SingleReg'
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 96391
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 631, in list
+    print(json.loads(i['modify_content']))
+KeyError: 'SingleReg'
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 96391
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 631, in list
+    print(json.loads(i['modify_content']))
+KeyError: 'SingleReg'
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 96391
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 632, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 100809
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 632, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 100809
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 634, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 100924
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 634, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 100924
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 635, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 100924
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 634, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 100925
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 634, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 100925
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 634, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=xxxx HTTP/1.1" 500 100880
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 634, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=undefined HTTP/1.1" 500 100946
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 634, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=3f852fb0-471d-4b63-bb4a-617ef6ca3630 HTTP/1.1" 500 103770
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 638, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=3f852fb0-471d-4b63-bb4a-617ef6ca3630 HTTP/1.1" 500 106199
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 641, in list
+    print(res_list.count())
+TypeError: count() takes exactly one argument (0 given)
+"GET /api/ip/modification/?ip_uuid=3f852fb0-471d-4b63-bb4a-617ef6ca3630 HTTP/1.1" 500 101724
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 641, in list
+    print(res_list.count())
+TypeError: count() takes exactly one argument (0 given)
+"GET /api/ip/modification/?ip_uuid=3f852fb0-471d-4b63-bb4a-617ef6ca3630 HTTP/1.1" 500 101724
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 643, in list
+    return JsonResponse(data)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=3f852fb0-471d-4b63-bb4a-617ef6ca3630 HTTP/1.1" 500 108432
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 643, in list
+    return JsonResponse(res_list)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=3f852fb0-471d-4b63-bb4a-617ef6ca3630 HTTP/1.1" 500 113830
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 641, in list
+    return JsonResponse(res_list)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/http/response.py", line 597, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+"GET /api/ip/modification/?ip_uuid=3f852fb0-471d-4b63-bb4a-617ef6ca3630 HTTP/1.1" 500 113350
+Internal Server Error: /api/ip/modification/
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/utils/datastructures.py", line 76, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'ip_uuid'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/liuxi/PycharmProjects/RegStudioBackend/IP/views.py", line 630, in list
+    if json.loads(i['modify_content'])["ip_uuid"] == request.query_params['ip_uuid']:
+  File "/Users/liuxi/.conda/envs/RegStudioBackend/lib/python3.6/site-packages/django/utils/datastructures.py", line 78, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'ip_uuid'
+"GET /api/ip/modification/ HTTP/1.1" 500 17603

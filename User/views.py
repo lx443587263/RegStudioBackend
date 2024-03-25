@@ -19,6 +19,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django_filters.rest_framework import DjangoFilterBackend
 from User.sers import UserInfoSerializers
+from IP.models import IpInfo
 import jwt
 from django.conf import settings
 from rest_framework.decorators import action
@@ -28,7 +29,7 @@ from django.contrib.auth.hashers import make_password
 from django.views.generic.base import ContextMixin
 from django.http import FileResponse
 from rest_framework.renderers import JSONRenderer
-
+from django.db.models import Q
 import base64
 
 
@@ -177,6 +178,12 @@ class UserInfoView(ModelViewSet, ContextMixin):
                                                 user_uuid=str(uuid.uuid4()),
                                                 create_date=datetime.now().strftime('%Y-%m-%d'),
                                                 position='read').save()
+                        condition1 = Q(category='Interface')
+                        condition2 = Q(category='Soc系统组件')
+                        for var in IpInfo.objects.filter(condition1|condition2).values():
+                            temp = IpInfo.objects.get(ip_uuid=var['ip_uuid'])
+                            temp.see_permission = temp.see_permission + ","+request.data.get('username')
+                            temp.save()
                         return JsonResponse({'token': crowd_response['token'], 'position': 'read',
                                              'username': crowd_response['user']['name'],
                                              'user_uuid': request.data.get('user_uuid')})

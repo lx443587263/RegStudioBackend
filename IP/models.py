@@ -20,7 +20,7 @@ class IpInfo(models.Model):
     child_version = models.CharField(verbose_name="Child Version", max_length=256, null=True)
     permission = models.CharField(verbose_name="Permission List", max_length=256, null=True)
     see_permission = models.CharField(verbose_name="see_permission", max_length=256, null=True)
-
+    reg_version = models.CharField(verbose_name="Reg Version", max_length=64, null=True)
 
 class RegGatherInfo(models.Model):
     """RegGather信息表"""

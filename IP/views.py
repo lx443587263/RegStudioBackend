@@ -18,7 +18,7 @@ from django.http import FileResponse, JsonResponse
 from django.utils import timezone
 import pandas as pd
 from django.core.paginator import Paginator, EmptyPage
-
+import json
 
 # Create your views here.
 
@@ -44,17 +44,29 @@ class IpView(ModelViewSet):
         serializer = IpSerializers(data=request.data, instance=queryset)
         '''校验'''
         data = request.data
-        exists = IpInfo.objects.filter(version=data.get('version'), child_version=data.get('child_version'),
-                                       ip_name=data.get('ip_name'), category=data.get('category'),
-                                       project=data.get('project')).exists()
-        if exists:
-            return Response({'error': '子版本已存在'})
+        # print(data)
+        # condition1 = Q(version=data.get('version'))
+        # condition2 = Q(child_version=data.get('child_version'))
+        # condition3 = Q(ip_name=data.get('ip_name'))
+        # condition4 = Q(category=data.get('category'))
+        # condition5 = Q(project=data.get('project'))
+        # print(IpInfo.objects.filter(condition1|condition2).values())
+        # for var in IpInfo.objects.filter(condition1).values():
+        #     temp = IpInfo.objects.get(ip_uuid=var['ip_uuid'])
+        #     temp.category = "sc"
+        #     temp.save()
+        # exists = IpInfo.objects.filter(version=data.get('version'), child_version=data.get('child_version'),
+        #                                ip_name=data.get('ip_name'), category=data.get('category'),
+        #                                project=data.get('project')).exists()
+        # result = IpInfo.objects.filter(condition1&condition2&condition3&condition4&condition5)
+        # if result:
+        #     return Response({'error': '子版本已存在'})
+        # else:
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
         else:
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data)
-            else:
-                return Response(serializer.errors)
+            return Response(serializer.errors)
         # data = request.data
         # if 'private_project' in data:
         #     # 在数据库中查询是否存在相同的记录
@@ -346,7 +358,6 @@ class ProjectView(ModelViewSet):
         condition1 = Q(project=data.get('project'))
         condition2 = Q(version=data.get('version'))
         result = ProjectInfo.objects.filter(condition1&condition2)
-        print(result)
         if result:
             return Response({'error': '项目已存在'})
         return super().create(request, *args, **kwargs)
@@ -607,8 +618,26 @@ class modificationInfoView(ModelViewSet):
     """操作记录视图"""
     queryset = modificationInfo.objects.all()
     serializer_class = modificationSerializer
-    filter_backends = (SearchFilter, OrderingFilter, DjangoFilterBackend)
+    # filter_backends = (SearchFilter, OrderingFilter, DjangoFilterBackend)
 
+    def list(self,request, *args,**kwargs):
+        data = modificationInfo.objects.all()
+        res_list = []
+        temp_reg_gather_uuid = ""
+        temp_single_reg_uuid = ""
+        for i in data.values():
+            if i['modify_model'] == 'RegGather':
+                if json.loads(i['modify_content'])["ip_uuid"] == request.query_params['ip_uuid']:
+                    res_list.append(i)
+                    temp_reg_gather_uuid = json.loads(i['modify_content'])["reg_gather_uuid"]
+            if i['modify_model'] == 'SingleReg':
+                if json.loads(i['modify_content'])["reg_gather_uuid"] == temp_reg_gather_uuid:
+                    res_list.append(i)
+                    temp_single_reg_uuid = json.loads(i['modify_content'])["single_reg_uuid"]
+            if i['modify_model'] == 'Value':
+                if json.loads(i['modify_content'])["single_reg_uuid"] == temp_single_reg_uuid:
+                    res_list.append(i)
+        return JsonResponse(res_list,safe=False)
 
 
 def cut_page(request):
