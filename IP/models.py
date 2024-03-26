@@ -21,7 +21,7 @@ class IpInfo(models.Model):
     permission = models.CharField(verbose_name="Permission List", max_length=256, null=True)
     see_permission = models.CharField(verbose_name="see_permission", max_length=256, null=True)
     reg_version = models.CharField(verbose_name="Reg Version", max_length=64, null=True)
-
+    edit_permission = models.CharField(verbose_name="edit_permission", max_length=256, null=True,default="admin")
 class RegGatherInfo(models.Model):
     """RegGather信息表"""
     # ip_uuid = models.CharField(verbose_name="IpUuid", max_length=128, null=False)
@@ -149,6 +149,14 @@ class modificationInfo(models.Model):
     class Meta:
         db_table = 'modificationInfo'
 
+class ModifyRecords(models.Model):
+    operator = models.CharField(verbose_name="Operator",max_length=128)
+    data = models.DateTimeField(verbose_name="Data")
+    IP = models.CharField(verbose_name="IPName",max_length=128)
+    active = models.CharField(verbose_name="Active",max_length=512)
+
+    class Meta:
+        db_table = 'ModifyRecords'
 
 class IpPageFilesModel(models.Model):
     file = models.FileField(upload_to='IpPage/')

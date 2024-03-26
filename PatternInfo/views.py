@@ -5,7 +5,11 @@ from PatternInfo.sers import PatternInfoSerializers
 from rest_framework.filters import SearchFilter, OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.response import Response
-
+from django.core.paginator import Paginator, EmptyPage
+from django.http import JsonResponse
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.decorators import action, api_view
+from rest_framework import status
 
 # Create your views here.
 
@@ -26,6 +30,7 @@ class PatternInfoView(ModelViewSet):
         "FPGA_FLOW",
         "FPGA_WORK", "WORK_PATH", "LOG_NAME", "SIM_RESULTS", "CHECK_WAVE", "JTAG_ACCESS", "PATTERN_MD5", "PROJECT_NAME")
 
+
     def create(self, request, *args, **kwargs):
         data = request.data
         data.decode('utf-8')
@@ -33,3 +38,9 @@ class PatternInfoView(ModelViewSet):
         if exists:
             return Response({'error': '版本已存在'})
         return super().create(request, *args, **kwargs)
+
+    @action(methods=['delete'], detail=False)
+    def delete(self, request):
+        queryset = PatternInfo.objects.filter(PROJECT_NAME=request.GET.get('PROJECT_NAME')).delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+

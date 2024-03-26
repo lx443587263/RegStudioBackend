@@ -39,6 +39,7 @@ router.register('api/ip/project', IpViews.ProjectView)
 router.register('api/ip/modification', IpViews.modificationInfoView,basename='modification')
 router.register('api/patterninfo',PatternInfoViews.PatternInfoView)
 router.register('api/ip/projectchange',IpViews.ProjectChangeView)
+router.register('api/ip/ModifyRecords',IpViews.ModifyRecordsView)
 # router.register('api/ip/download_spec', IpViews.download_docx)
 
 urlpatterns = [
@@ -46,7 +47,8 @@ urlpatterns = [
     path('api/ip/download_spec/', IpViews.download_docx, name='download_spec'),
     path('api/ip/download_help/', UserViews.download_help_docx, name='download_help_spec'),
     path('api/ip/download_ip_page_file/', IpViews.download_docx, name='download_spec'),
-    path('api/ip/modification/cut_page/', IpViews.cut_page)
+    path('api/ip/modification/cut_page/', IpViews.cut_page),
+    path('api/ip/ModifyRecords/cut_page/', IpViews.ModifyRecords_cut_page)
 
     # path('user/login', UserViews.login_view)
     # # 获取Token的接口

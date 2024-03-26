@@ -1,8 +1,8 @@
 from rest_framework.viewsets import ModelViewSet
 from IP.models import IpInfo, RegGatherInfo, SingleRegInfo, ValueInfo, FilesModel, TemplateFilesModel, CategoryInfo, \
-    modificationInfo, IpPageFilesModel, ProjectInfo,ProjectChange
+    modificationInfo, IpPageFilesModel, ProjectInfo,ProjectChange,ModifyRecords
 from IP.sers import IpSerializers, RegGatherSerializers, SingleRegSerializers, ValueSerializers, FilesSerializer, \
-    TemplateFilesSerializer, CategorySerializers, modificationSerializer, IpPageFilesSerializer, ProjectSerializers,ProjectChangeSerializers
+    TemplateFilesSerializer, CategorySerializers, modificationSerializer, IpPageFilesSerializer, ProjectSerializers,ProjectChangeSerializers,ModifyRecordsSerializer
 from rest_framework.filters import SearchFilter, OrderingFilter
 from IP.filters import IpInfoFilter
 from django_filters.rest_framework import DjangoFilterBackend
@@ -161,6 +161,18 @@ class RegGatherView(ModelViewSet):
                                                     modify_content=json.dumps(request.data),
                                                     modify_model="RegGather",
                                                     )
+                    diff = json.loads(temp_former_content).keys() & request.data
+                    temp_active_list = [(k, json.loads(temp_former_content)[k], request.data[k]) for k in diff if json.loads(temp_former_content)[k] != request.data[k]]
+                    for i in temp_active_list:
+                        if i[0] == 'reg_gather_name':
+                            temp_active = "{} 将 {} 的 {} 字段从 {} 修改成 {}".format(user,queryset.reg_gather_name,i[0],i[1],i[2])
+                        else:
+                            temp_active = "{} 将 {} 字段从 {} 修改成 {}".format(user, i[0], i[1], i[2])
+                        ModifyRecords.objects.create(
+                            operator=user,
+                            data=timezone.now().strftime("%Y-%m-%d %H:%M:%S"),
+                            IP=IpInfo.objects.get(ip_uuid=RegGatherInfo.objects.get(reg_gather_uuid=queryset.reg_gather_uuid).ip_uuid.ip_uuid).ip_name ,
+                            active=temp_active)
                 else:
                     return Response("请登陆后在修改")
                 return Response(serializer.data)
@@ -218,7 +230,16 @@ class SingleRegView(ModelViewSet):
                                                     modify_model="SingleReg",
                                                     )
 
+                    diff = json.loads(temp_former_content).keys() & request.data
+                    temp_active_list = [(k, json.loads(temp_former_content)[k], request.data[k]) for k in diff if
+                                        json.loads(temp_former_content)[k] != request.data[k]]
+                    for i in temp_active_list:
+                        temp_active = "{} 将 {} 字段从 {} 修改成 {}".format(user, i[0], i[1], i[2])
+                        ModifyRecords.objects.create(operator=user, data=timezone.now().strftime("%Y-%m-%d %H:%M:%S"),
+                                                     IP=IpInfo.objects.get(ip_uuid=RegGatherInfo.objects.get(reg_gather_uuid=SingleRegInfo.objects.get(reg_gather_uuid=queryset.reg_gather_uuid_id).reg_gather_uuid.reg_gather_uuid).ip_uuid.ip_uuid).ip_name ,
+                                                     active=temp_active)
                     return Response(serializer.data)
+
                 else:
                     return Response("请登陆后在修改")
 
@@ -286,6 +307,16 @@ class ValueView(ModelViewSet):
                                                     modify_content=json.dumps(request.data),
                                                     modify_model="Value",
                                                     )
+
+                    diff = json.loads(temp_former_content).keys() & request.data
+                    temp_active_list = [(k, json.loads(temp_former_content)[k], request.data[k]) for k in diff if
+                                        json.loads(temp_former_content)[k] != request.data[k]]
+                    for i in temp_active_list:
+                        temp_active = "{} 将 {} 字段从 {} 修改成 {}".format(user, i[0], i[1], i[2])
+                        ModifyRecords.objects.create(operator=user, data=timezone.now().strftime("%Y-%m-%d %H:%M:%S"),
+                                                     IP=IpInfo.objects.get(ip_uuid=(RegGatherInfo.objects.get(reg_gather_uuid=SingleRegInfo.objects.get(single_reg_uuid=queryset.single_reg_uuid_id).reg_gather_uuid.reg_gather_uuid).ip_uuid.ip_uuid)).ip_name,
+                                                     active=temp_active)
+
                 else:
                     return Response("请登陆后在修改")
                 return Response(serializer.data)
@@ -640,15 +671,56 @@ class modificationInfoView(ModelViewSet):
         return JsonResponse(res_list,safe=False)
 
 
+
+class ModifyRecordsView(ModelViewSet):
+    """操作记录视图"""
+    queryset = ModifyRecords.objects.all()
+    serializer_class = ModifyRecordsSerializer
+
+    # def create(self, request, *args, **kwargs):
+    #     return super().create(request, *args, **kwargs)
+def ModifyRecords_cut_page(request):
+    search = request.GET.get("search")
+    page = request.GET.get('page',default = 1)
+    serializer_class = ModifyRecordsSerializer
+
+
+    vars = ModifyRecords.objects.all().order_by("id")
+
+    if search:
+        condition1 = Q(IP__contains=search)
+        condition2 = Q(operator__contains=search)
+        vars = ModifyRecords.objects.all().filter(condition1|condition2).order_by("id")
+
+    paginator = Paginator(vars,100)
+
+
+
+    try:
+        vars = paginator.page(page).object_list
+    except EmptyPage:
+        vars = paginator.page(paginator.num_pages).object_list
+
+    vars = vars.values()
+
+    data = {
+        "success":True,
+        "results":list(vars),
+        "count":paginator.count
+    }
+    return JsonResponse(data)
+
 def cut_page(request):
     search = request.GET.get("search")
     page = request.GET.get('page',default = 1)
     serializer_class = modificationSerializer
 
+
     vars = modificationInfo.objects.all().order_by("id")
 
     if search:
         vars = modificationInfo.objects.all().filter(key__contains=search)
+        print(vars)
 
     paginator = Paginator(vars,20)
 
